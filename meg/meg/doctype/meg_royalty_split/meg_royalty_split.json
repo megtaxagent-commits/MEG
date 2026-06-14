@@ -1,0 +1,37 @@
+{
+ "autoname": "MEG-ROY-.YYYY.-.#####",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "source_invoice",
+  "total_amount",
+  "currency",
+  "status",
+  "column_break_1",
+  "posted_date",
+  "journal_entry",
+  "section_splits",
+  "splits"
+ ],
+ "fields": [
+  {"fieldname": "title", "fieldtype": "Data", "label": "Title", "reqd": 1},
+  {"fieldname": "source_invoice", "fieldtype": "Link", "label": "Source Invoice", "options": "Sales Invoice"},
+  {"fieldname": "total_amount", "fieldtype": "Currency", "label": "Total Amount", "reqd": 1},
+  {"fieldname": "currency", "fieldtype": "Link", "label": "Currency", "options": "Currency", "reqd": 1},
+  {"fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Pending\nProcessed\nCancelled", "default": "Pending"},
+  {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+  {"fieldname": "posted_date", "fieldtype": "Date", "label": "Posted Date"},
+  {"fieldname": "journal_entry", "fieldtype": "Link", "label": "Journal Entry", "options": "Journal Entry", "read_only": 1},
+  {"fieldname": "section_splits", "fieldtype": "Section Break", "label": "Revenue Splits"},
+  {"fieldname": "splits", "fieldtype": "Table", "label": "Splits", "options": "MEG Royalty Split Line"}
+ ],
+ "module": "MEG",
+ "name": "MEG Royalty Split",
+ "naming_rule": "Expression (old style)",
+ "permissions": [
+  {"role": "MEG Manager", "read": 1, "write": 1, "create": 1, "delete": 1},
+  {"role": "MEG Accountant", "read": 1, "write": 1}
+ ],
+ "track_changes": 1
+}

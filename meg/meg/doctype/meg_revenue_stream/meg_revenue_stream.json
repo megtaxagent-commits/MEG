@@ -1,0 +1,43 @@
+{
+ "autoname": "MEG-RS-.YYYY.-.#####",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "stream_name",
+  "category",
+  "source_platform",
+  "currency",
+  "is_active",
+  "column_break_1",
+  "income_account",
+  "cost_center",
+  "tax_template",
+  "section_integration",
+  "webhook_secret",
+  "api_key",
+  "platform_account_id"
+ ],
+ "fields": [
+  {"fieldname": "stream_name", "fieldtype": "Data", "label": "Stream Name", "reqd": 1},
+  {"fieldname": "category", "fieldtype": "Link", "label": "Category", "options": "MEG Revenue Category", "reqd": 1},
+  {"fieldname": "source_platform", "fieldtype": "Select", "label": "Source Platform", "options": "\nStripe\nGumroad\nTeachable\nPayPal\nWise\nYouTube\nSubstack\nPatreon\nManual"},
+  {"fieldname": "currency", "fieldtype": "Link", "label": "Currency", "options": "Currency", "reqd": 1},
+  {"fieldname": "is_active", "fieldtype": "Check", "label": "Active", "default": 1},
+  {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+  {"fieldname": "income_account", "fieldtype": "Link", "label": "Income Account", "options": "Account"},
+  {"fieldname": "cost_center", "fieldtype": "Link", "label": "Cost Center", "options": "Cost Center"},
+  {"fieldname": "tax_template", "fieldtype": "Link", "label": "Tax Template", "options": "Sales Taxes and Charges Template"},
+  {"fieldname": "section_integration", "fieldtype": "Section Break", "label": "Integration"},
+  {"fieldname": "webhook_secret", "fieldtype": "Password", "label": "Webhook Secret"},
+  {"fieldname": "api_key", "fieldtype": "Password", "label": "API Key"},
+  {"fieldname": "platform_account_id", "fieldtype": "Data", "label": "Platform Account ID"}
+ ],
+ "module": "MEG",
+ "name": "MEG Revenue Stream",
+ "naming_rule": "Expression (old style)",
+ "permissions": [
+  {"role": "MEG Manager", "read": 1, "write": 1, "create": 1, "delete": 1},
+  {"role": "MEG Accountant", "read": 1}
+ ],
+ "track_changes": 1
+}
